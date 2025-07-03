@@ -166,7 +166,7 @@ label fail_basic:
 
     usuario "Nossa! Que sonho estranho... preciso voltar a estudar."
 
-    return
+    jump fimtenteoutravez
 
 
 label advanced_quiz:
@@ -253,7 +253,7 @@ label perfect_advanced:
     usuario "Caramba! Isso foi só um sonho?!"
     usuario "De qualquer forma... Me sinto muito mais confiante do que antes!"
 
-    return
+    jump prova
 
 label fail_advanced:
     show android giba at center
@@ -270,7 +270,7 @@ label fail_advanced:
     usuario "Caramba! Isso foi um sonho?!"
     usuario "De qualquer forma... Me sinto  mais confiante do que antes!"
 
-    return
+    jump fimtenteoutravez
 
 label wakeup_good:
     scene black with pixellate
@@ -279,5 +279,36 @@ label wakeup_good:
 
     usuario "Caramba isso foi um sonho?!"
     usuario "De qualquer forma... Me sinto um pouco mais confiante que antes!"
+
+    jump prova
+
+label prova:
+    scene black with pixellate
+    pause 0.5
+
+    usuario "Tá chegando o dia..."
+
+    scene bg prova
+    with fade
+
+    usuario "Aquele sonho me ajudou muito. Valeu a pena..."
+
+    jump fimfeliz
+
+label fimfeliz:
+
+    scene bg fimfeliz
+    with fade
+
+    pause 1.0
+
+    return
+
+label fimtenteoutravez:
+
+    scene bg fimtenteoutravez
+    with fade
+
+    pause 1.0
 
     return
